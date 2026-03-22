@@ -1,0 +1,15 @@
+@import url(assets/fonts.css);
+
+:root {
+	font-family: "Instrument Sans", monospace;
+	color: #ffffff
+}
+
+body, html { 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0
+}

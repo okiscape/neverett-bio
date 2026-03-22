@@ -1,0 +1,107 @@
+.about-block.music-block {min-width: 600px}
+
+.track-main-info {width: 100%; 
+  align-items: center; display: flex; gap: 25px;
+}
+.track-main-cover {width: 150px; border-radius: 1rem;}
+.track-main-title-container {overflow: hidden;}
+.track-main-title {font-size: 38px; color: #fff;
+  width: 100%;      
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  height: 3rem;}
+.track-main-meta {display: flex; flex-direction: column; max-width: 72%;}
+
+.track-main-status {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 1.1rem; opacity: 0.5; margin-top: -25px;
+}
+.track-main-status-svg {
+  margin-bottom: -2px;
+  transition: all 1s;
+}
+.track-main-status-svg.blur {
+  filter: blur(1px);
+  margin-bottom: -2px;
+}
+.track-main-status-svg.online {
+    fill: #1ED760
+}
+.track-main-status-svg.offline {
+    fill: #ff0f0f
+}
+
+
+.track-main-badge-container {display: flex; gap: 5px; width: 100%;max-width:100%;
+  flex-wrap: wrap
+}
+.track-main-badge {
+  width: min-content;
+  padding: 2px 10px 2px 10px;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+}
+.track-main-badge.Spotify {
+  background-color: #1ed75f3d;
+  color: #69ff9d;
+}
+.track-main-badge.Last {
+  background-color: #b9000069;
+  color: #ff5e5e;
+}
+.track-main-badge.is-local {
+  background-color: #002bb969;
+  color: #5e89ff;
+}
+
+
+.subtitle {
+  text-align: center;
+  margin: 6px;
+  opacity: 0.9;font-size: 20px;
+}
+
+.recpld-container {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recpld-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.226);
+  border-radius: 12px;
+  gap: 16px;
+}
+
+.recpld-item-cover {
+  width: 70px; 
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.recpld-item-meta-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.recpld-item-meta-container p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recpld-item-title {color: #fff}
+.recpld-item-artist, .recpld-item-lastpld{opacity: 0.5;}
+.recpld-item-stepdata {display: flex; justify-content: space-between; width: 100%}
