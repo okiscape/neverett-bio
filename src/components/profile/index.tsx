@@ -63,12 +63,6 @@ function App() {
         <div className="profile-stack">
           <p className="profile-stack-title">My Tech Stack:</p>
           <div className="profile-stack-icons">
-            {icons.map((url, index) => (
-              <img 
-                src={url}
-                className="profile-stack-icon"
-              />
-            ))}
           </div>
         </div>
       </div>

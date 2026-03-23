@@ -1,5 +1,6 @@
 @import url(assets/fonts.css);
 
+/* @import "tailwindcss"; */
 :root {
 	font-family: "Instrument Sans", monospace;
 	color: #ffffff
