@@ -3,7 +3,7 @@
 
 .body { background-color: #000000 }
 
-.about-block { background-color: #ffffff10; padding: 20px; border-radius: 1rem; color: #a1a1a1; min-width: 150px;}
+.about-block { background-color: #ffffff10; padding: 25px; border-radius: 1rem; color: #838383; min-width: 150px;}
 .about-block-title-container { width: 100%; display: flex; justify-content: center; position: relative;
   top: -15px; font-size: 18px; margin-bottom: -15px }
 .about-block-title {width: max-content; opacity: 0.5;}

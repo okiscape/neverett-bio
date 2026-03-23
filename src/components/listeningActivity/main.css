@@ -1,4 +1,4 @@
-.about-block.music-block {min-width: 600px}
+.about-block.music-block {min-width: 600px; height: min-content}
 
 .track-main-info {width: 100%; 
   align-items: center; display: flex; gap: 25px;
@@ -9,6 +9,7 @@
   width: 100%;      
   white-space: nowrap;
   overflow: hidden; 
+  font-weight: 500;
   text-overflow: ellipsis;
   height: 3rem;}
 .track-main-meta {display: flex; flex-direction: column; max-width: 72%;}
@@ -26,10 +27,10 @@
   margin-bottom: -2px;
 }
 .track-main-status-svg.online {
-    fill: #1ED760
+  fill: #1ED760
 }
 .track-main-status-svg.offline {
-    fill: #ff0f0f
+  fill: #ff0f0f
 }
 
 
@@ -67,6 +68,20 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+.recpld-loading {
+  font-size: 1.2rem;
+  opacity: 0.5;
+  margin: 15px;
+  width: 100%;
+  text-align: center;
+  animation: opacity-pulse 4s infinite ease-in-out
+}
+
+@keyframes opacity-pulse {
+  0% {opacity:1};
+  50% {opacity:0.5};
+  100% {opacity:1};
 }
 
 .recpld-item-container {

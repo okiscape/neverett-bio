@@ -142,6 +142,7 @@ function App() {
       </div>
       <p className="subtitle">Last listened</p>
       <div className="recpld-container">
+        {!recentlyPlayed && <i className="recpld-loading">Loading...</i>}
         {recentlyPlayed?.map((item) => (
           <div className="recpld-item-container">
             <img src={item.cover || placeholderCover} className="recpld-item-cover"/>
