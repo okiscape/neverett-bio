@@ -1,0 +1,48 @@
+.header-name { letter-spacing: 1px }
+
+.header-items-container {
+	gap: 30px;
+	display: flex;
+	flex-direction: row;
+	background-color: #00000010;
+	padding-left: 15px;
+	padding-right: 15px;
+  
+  justify-content: center;
+  
+  height:40px;
+  align-items: center;
+
+  border: 2px solid #ffffff09 ;
+	border-radius: 5rem;
+  backdrop-filter: blur(10px);
+}
+.header-item { 
+	color: #ffffff;
+  opacity: 0.5;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+  white-space: nowrap;
+}
+
+.header-item:hover {
+  opacity: 0.6;
+}
+.header {
+	position: fixed;
+	padding: 0 16px;
+	display: flex;
+	align-items: center;
+	top: 20px; left: 0; right: 0;
+	height: 64px;
+  width: 100%;
+  justify-content: center;
+	z-index: 1000;
+	margin-top: 0;
+	font-size: 20px
+}
+.header-main-container {
+  justify-content: space-between; width: 900px;
+  display: flex; height: min-content;
+  align-items: center
+}

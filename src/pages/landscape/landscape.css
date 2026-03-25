@@ -5,13 +5,13 @@
 
 .about-block { background-color: #ffffff10; padding: 25px; border-radius: 1rem; color: #838383; min-width: 150px;}
 .about-block-title-container { width: 100%; display: flex; justify-content: center; position: relative;
-  top: -15px; font-size: 18px; margin-bottom: -15px }
-.about-block-title {width: max-content; opacity: 0.5;}
+  top: -15px; font-size: 10px; margin-bottom: -15px }
+.about-block-title {width: max-content; opacity: 0.5; font-size: 15px}
 
 .about-blockrow { display: flex; gap: 40px }
 .about-blocks-container { width: 100%; display: flex; gap: 40px}
-.about-title { font-size: 36px; color: #ffffff; text-shadow: 0 0 8px #000000 }
-.about-content { width: 1600px; height: 600px;
+.about-title { font-size: 35px; color: #ffffff; text-shadow: 0 0 8px #000000; }
+.about-content { width: 1400px; height: 600px;
   display: flex; flex-direction: column;
   gap: 20px;
 }
@@ -28,58 +28,6 @@
 }
 .footer-content {
   display: flex; justify-content: space-between; align-items: center; width: 700px;
-}
-
-.header-title { min-width: 220px }
-.header-name { letter-spacing: 1px; text-shadow: 0 0 16px #000000 }
-
-.header-items-container {
-	gap: 30px;
-	display: flex;
-	flex-direction: row;
-	background-color: #00000010;
-  
-	padding-left: 30px;
-	padding-right: 30px;
-  
-  width: 150px;
-  justify-content: center;
-  
-  height:40px;
-  align-items: center;
-
-  border: 2px solid #ffffff15 ;
-	border-radius: 5rem;
-  backdrop-filter: blur(10px);
-}
-.header-item { 
-	color: #ffffff;
-  opacity: 0.5;
-	transition: all 0.2s ease-in-out;
-	cursor: pointer;
-  white-space: nowrap;
-}
-
-.header-item:hover {
-  opacity: 0.6;
-}
-.header {
-	position: fixed;
-	padding: 0 16px;
-	display: flex;
-	align-items: center;
-	top: 20px; left: 0; right: 0;
-	height: 64px;
-  width: 100%;
-  justify-content: center;
-	z-index: 1000;
-	margin-top: 0;
-	font-size: 20px
-}
-.header-main-container {
-  justify-content: space-between; width: 900px;
-  display: flex; height: min-content;
-  align-items: center
 }
 
 .about-container {

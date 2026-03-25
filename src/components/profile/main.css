@@ -1,16 +1,76 @@
-.profile {display: flex; flex-direction: column; gap: 1rem}
+.profile {display: flex; flex-direction: column; gap: 1rem; font-size: 1.1rem}
 .profile-quick-container {display: flex; align-items: center; gap: 1.2rem}
-.profile-avatar {max-width: 120px; aspect-ratio: 1/1; border-radius: 2rem; cursor: pointer;transition: all 0.2s;}
-.profile-avatar:hover {transform: scale(1.05);}
+.profile-avatar {max-width: 6rem; aspect-ratio: 1/1; border-radius: 1.5rem; cursor: pointer;transition: all 0.2s;}
+.profile-avatar:hover {transform: scale(1.05)}
 .profile-meta-container {display: flex; flex-direction: column;}
-.profile-meta-title {color: #fff; font-size: 2.4rem;}
+.profile-meta-title {color: #fff; font-size: 2rem;}
 .profile-meta-subtitle {margin-top: -5px;}
 .profile-maintext {}
 
 .profile-stack {color: #fff}
 .profile-stack-title {font-weight: 500;margin-bottom: 5px;}
-.profile-stack-icons {display: flex;gap: 5px;}
-.profile-stack-icon {width: 40px}
+.profile-stack-container {display: flex;gap: 5px;
+  flex-wrap: wrap; 
+}
+
+
+.stack-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tag-button {
+  color: #888;
+  border: 1px solid #252525;
+  padding: 4px 10px;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.tag-button.active {
+  color: #fff;
+  border-color: #fff;
+  background-color: #ffffff10;
+  box-shadow: #ffffff70 0 0 5px;
+  transform: scale(1.1)
+}
+
+.stack-skill {
+  display: flex;
+  gap: 4px;
+  padding: 2px 5px 2px 5px;
+  border-radius: 1rem;
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--accent-color) 20%, #00000000 99%);
+  background-color: color-mix(in srgb, var(--accent-color) 20%, #00000000 90%);
+  transition: all 0.2s;
+  backdrop-filter: blur(2px);
+  cursor: pointer
+}
+.stack-skill:hover {
+  transform: scale(1.2);
+  z-index: 2;
+}
+.stack-skill.inactive {
+  pointer-events: none; 
+  filter: grayscale(1); 
+}
+.stack-icon {width: 20px; aspect-ratio: 1/1;
+  color: color-mix(in srgb, var(--accent-color) 50%, #fff 50%)
+}
+.skill-name {
+  color: color-mix(in srgb, var(--accent-color) 50%, #fff 50%)
+}
+
+.stack-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
 
 .play-nye-class {animation: pop-and-swap 2s 1 ease-in-out; cursor: not-allowed;}
 @keyframes pop-and-swap {

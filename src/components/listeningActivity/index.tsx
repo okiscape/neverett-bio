@@ -12,7 +12,7 @@ const LTFM_RECENTS_NDPT = import.meta.env.VITE_LTFM_RECENTS_NDPT;
 function App() {
   const [nowPlaying, setNowPlaying] = useState<NowPlayingItem>()
   const [recentlyPlayed, setRecentlyPlayed] = useState<{name: string, cover: string, url: string; artistName: string; lastPlayed: string}[]>()
-
+  const [techStack, setTechStack] = useState<{name: string, icon: string, aboutUrl: string, tags: string}[]>()
 
   function formatTimeAgo(seconds: number) {
     if (seconds < 60) return 'just now';
@@ -130,15 +130,15 @@ function App() {
                 r="2" 
               />
             </svg>
-            <p>{nowPlaying?.lastPlayed}</p>
+            <div>{nowPlaying?.lastPlayed}</div>
           </div>
-          <p className="track-main-artist">By {nowPlaying?.artistName || "..."}</p>
+          <div className="track-main-artist">By {nowPlaying?.artistName || "..."}</div>
           <div className="track-main-title-container">
-            <p className="track-main-title" title={nowPlaying?.title}>{nowPlaying?.title || "Loading..."}</p>
+            <div className="track-main-title" title={nowPlaying?.title}>{nowPlaying?.title || "Loading..."}</div>
           </div>
           
           <div className="track-main-badge-container">
-            <p className={`track-main-badge ${nowPlaying?.source.split(".")[0]}`}>{nowPlaying?.source}</p>
+            <div className={`track-main-badge ${nowPlaying?.source.split(".")[0]}`}>{nowPlaying?.source}</div>
             {nowPlaying?.isLocal && <p className={`track-main-badge is-local`}>Local</p>}
           </div>
         </div>
@@ -147,7 +147,7 @@ function App() {
       <div className="recpld-container">
         {!recentlyPlayed && <i className="recpld-loading">Loading...</i>}
         {recentlyPlayed?.map((item) => (
-          <div className="recpld-item-container">
+          <div className="recpld-item-container cursor-pointer" onClick={()=>{window.open(item.url)}}>
             <img src={item.cover || placeholderCover} className="recpld-item-cover"/>
             <div className="recpld-item-meta-container">
               <p className="recpld-item-title">{item.name}</p>

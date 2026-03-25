@@ -1,48 +1,16 @@
-import { useState, useEffect } from 'react';
+import Header from "../../components/header"
 
 import ListeningActivityBlock from "../../components/listeningActivity"
 import ProfileBlock from "../../components/profile"
 
 import "./landscape.css"
-const RealTimeClock = () => {
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date());
-    }, 1);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className='header-time'>
-      {time.toLocaleTimeString('ru-RU', {
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit',
-  hour12: false,
-  timeZone: 'Europe/Moscow',
-  timeZoneName: 'short'
-})}
-    </div>
-  );
-};
 
 
 function App() {
   return (
     <>
       <div className="header">
-        <div className="header-main-container">
-          <div className="header-title">
-            <span className="header-name" key="static-name">Neverett</span>
-          </div>
-
-          <div className="header-items-container">
-            <div className="header-item"><RealTimeClock/></div>
-          </div>
-        </div>
+        <Header/>
       </div>
 
       <div className="body">
@@ -51,7 +19,7 @@ function App() {
             Neverett
           </p>
           <p className="banner-description">
-            Backend developer
+            Fullstack developer
           </p>
           
           <p className="banner-hint">
