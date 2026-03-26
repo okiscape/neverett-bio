@@ -9,7 +9,9 @@
 
 .profile-stack {color: #fff}
 .profile-stack-title {font-weight: 500;margin-bottom: 5px;}
-.profile-stack-container {display: flex;gap: 5px;
+.profile-stack-container {
+  display: flex;
+  gap: 5px;
   flex-wrap: wrap; 
 }
 
@@ -36,7 +38,7 @@
   border-color: #fff;
   background-color: #ffffff10;
   box-shadow: #ffffff70 0 0 5px;
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .stack-skill {
@@ -47,17 +49,19 @@
   border-width: 1.5px;
   border-color: color-mix(in srgb, var(--accent-color) 20%, #00000000 99%);
   background-color: color-mix(in srgb, var(--accent-color) 20%, #00000000 90%);
-  transition: all 0.2s;
+  transition: all 0.3s;
   backdrop-filter: blur(2px);
   cursor: pointer
 }
 .stack-skill:hover {
   transform: scale(1.2);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent-color) 20%, #00000000 90%);
   z-index: 2;
 }
 .stack-skill.inactive {
   pointer-events: none; 
-  filter: grayscale(1); 
+  filter: grayscale(1) blur(1px); 
+  opacity: 0.2;
 }
 .stack-icon {width: 20px; aspect-ratio: 1/1;
   color: color-mix(in srgb, var(--accent-color) 50%, #fff 50%)

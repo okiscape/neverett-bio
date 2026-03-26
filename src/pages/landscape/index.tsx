@@ -2,9 +2,19 @@ import Header from "../../components/header"
 
 import ListeningActivityBlock from "../../components/listeningActivity"
 import ProfileBlock from "../../components/profile"
+import GitHubBlock from "../../components/github"
+import BannerBlock from "../../components/top-banner"
+import FooterBlock from "../../components/footer"
 
 import "./landscape.css"
 
+import Masonry from 'react-masonry-css';
+
+const breakpoints = {
+  default: 2,  // 3 колонки по умолчанию
+  1024: 2,     // 2 колонки при ширине < 1024px
+  640: 1       // 1 колонка при ширине < 640px
+};
 
 function App() {
   return (
@@ -14,40 +24,27 @@ function App() {
       </div>
 
       <div className="body">
-        <div className="banner-container">
-          <p className="banner-title">
-            Neverett
-          </p>
-          <p className="banner-description">
-            Fullstack developer
-          </p>
-          
-          <p className="banner-hint">
-            <i>Scroll down to learn more!</i>
-          </p>
-        </div>
-        <div className="about-container" id="about">
+        <BannerBlock/>
+        <div className="about-container">
           <div className="about-content">
             <div className="about-title">
               About me
             </div>
-            <div className="about-blocks-container">
-              <div className="about-blockrow">
-
-                <ListeningActivityBlock/>
-                <ProfileBlock/>
-              </div>
-            </div>
+            <Masonry
+              breakpointCols={breakpoints}
+              className="masonry-grid"
+              columnClassName="masonry-column"
+            >
+              <ListeningActivityBlock/>
+              <ProfileBlock/>
+              <GitHubBlock/>
+            </Masonry>
           </div>
         </div>
-        <div className="footer-container">
-          <div className="footer-content">
-            <p>Neverett</p>
-            <div className="footer-links">
-              <a href="https://github.com/okiscape" target="_blank">GitHub</a>
-            </div>
-          </div>
-        </div>
+      </div>
+      
+      <div className="footer">
+        <FooterBlock/>
       </div>
     </>
   )

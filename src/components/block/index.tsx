@@ -1,4 +1,5 @@
 import React from 'react';
+import "./main.css"
 
 interface BlockProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

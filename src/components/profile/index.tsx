@@ -4,6 +4,7 @@ import Jeanne from "../../assets/jeanne.jpg"
 import NyeJeanne from "../../assets/nye-jeanne.png"
 import NyeAudio from "../../assets/nye.mp3"
 import { useEffect, useRef, useState } from "react"
+import { preload } from "react-dom"
 
 const PROF_STACK_NDPT = import.meta.env.VITE_PROF_STACK_NDPT
 const API_URL = import.meta.env.VITE_API_URL
@@ -30,9 +31,12 @@ interface Skill {
   tags: string[]
 }
 
+preload(NyeAudio, {as:"image"});
+preload(NyeJeanne, {as: "image"}); 
 function App() { 
   const [playNyeClass, setPlayNyeClass] = useState<string>("")
-  const [currentSrc, setCurrentSrc] = useState(Jeanne)
+  const [currentImageSrc, setCurrentImageSrc] = useState(Jeanne)
+
   const [stackIcons, setStackIcons] = useState<Skill[]>()
   const [stackCategories, setStackCategories] = useState<string[]>()
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -40,8 +44,8 @@ function App() {
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
       prev.includes(tag) 
-        ? prev.filter((t) => t !== tag) // Удаляем, если уже был
-        : [...prev, tag]                // Добавляем, если не было
+        ? prev.filter((t) => t !== tag) 
+        : [...prev, tag] 
     );
   };
 
@@ -67,28 +71,26 @@ function App() {
   function playNye() {
     if (playNyeClass) return;
 
-    // 1. Запускаем анимацию
     setPlayNyeClass("play-nye-class");
 
-    // 2. Звук
-    const audio = new Audio(NyeAudio);
-    audio.play();
+    const _nyeaudio = new Audio(NyeAudio)
 
-    // 3. ТАЙМИНГ: Смена спрайта на 510-й миллисекунде (85% от 0.6s)
+    _nyeaudio.play();
+
     setTimeout(() => {
-      setCurrentSrc(NyeJeanne);
+      setCurrentImageSrc(NyeJeanne);
     }, 1460);
 
-    // 4. Сброс класса после полного завершения (600мс), чтобы можно было кликнуть снова
+
     setTimeout(() => {
       setPlayNyeClass("");
-      setCurrentSrc(Jeanne)
+      setCurrentImageSrc(Jeanne)
     }, 2000);
   }
 
   const tagsRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    updateStack()
+    updateStack();
     
     const handleClickOutside = (event: MouseEvent) => {
       if (tagsRef.current && !tagsRef.current.contains(event.target as Node)) {
@@ -107,7 +109,7 @@ function App() {
     <Block title="Profile">
       <div className="profile">
         <div className="profile-quick-container">
-          <img src={currentSrc} onClick={playNye} className={`profile-avatar ${playNyeClass}`}/>
+          <img src={currentImageSrc} onClick={playNye} className={`profile-avatar ${playNyeClass}`}/>
           <div className="profile-meta-container">
             <p className="profile-meta-title">
               Neverett
@@ -118,8 +120,6 @@ function App() {
           </div>
         </div>
         <p className="profile-text">
-  Greetings everyone!!! Im so happy to see anyone on this website!!<br/>
-  I wanted to create my own bio for a long time, and now its here!!<br/>
   Im neverett, i like to create QoL things, dreaming to create more
   prettier frontend, and to create the most useful and coolest APIs
   for something.<br/>
@@ -152,7 +152,6 @@ function App() {
                   style={{
                     '--accent-color': `#${item.accentColor}`, 
                     '--secondary-color': `#${item.secondaryColor}`,
-                    opacity: isInactive ? 0.3 : 1,
                   } as React.CSSProperties}
                   href={item.aboutUrl}
                   target="_blank"
